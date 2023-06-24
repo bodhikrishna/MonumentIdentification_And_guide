@@ -4,7 +4,8 @@ import wikipedia
 import streamlit as st
 from PIL import Image
 from geopy.geocoders import Nominatim
-
+from gtts import gTTS
+from io import BytesIO
 
 st.set_page_config(
     page_title = 'Image feature prediction'
@@ -79,10 +80,34 @@ if image:
         result= wikipedia.summary(resultinter,sentences=10,auto_suggest=False)
         st.caption(result)
         
+    
+    sound_file = BytesIO()
+    tts = gTTS(result, lang='en')
+    tts.write_to_fp(sound_file)
+    
+    st.audio(sound_file)
+    
+
+
+        
     address,latitude,longitude=get_map(resultinter)
     data=[[latitude,longitude]]
     df=pd.DataFrame(data,columns=['lat','lon'])
+    st.caption(latitude)
+    st.caption(longitude)
     st.map(df)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
         
         
     
