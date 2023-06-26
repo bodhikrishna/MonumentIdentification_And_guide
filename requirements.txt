@@ -7,7 +7,6 @@ streamlit
 pandas
 wikipedia
 geopy
-geocoders
 gtts
 folium
 numpy
