@@ -2,6 +2,12 @@ fastapi
 opencv-python
 tensorflow== 2.9.0
 uvicorn
-gunicorn
 requests
 streamlit
+pandas
+wikipedia
+geopy
+geocoders
+gtts
+folium
+numpy
