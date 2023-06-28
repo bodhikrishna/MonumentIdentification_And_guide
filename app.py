@@ -16,9 +16,9 @@ from datetime import timedelta, date, datetime
 import uuid
 from fastapi.param_functions import Query
 
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Conv2D, MaxPool2D, Flatten, Dense, Dropout
+from keras.preprocessing.image import ImageDataGenerator
+from keras.models import Sequential
+from keras.layers import Conv2D, MaxPool2D, Flatten, Dense, Dropout
 
 model_1 = Sequential([
   Conv2D(32, 5, activation='relu', input_shape=(300, 300, 3)),
