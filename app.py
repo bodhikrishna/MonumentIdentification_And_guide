@@ -29,11 +29,6 @@ model_1 = Sequential([
   MaxPool2D(),
   Conv2D(64, 5, activation='relu'),
   MaxPool2D(),
-#   Conv2D(10, 5, activation='relu'),
-#   Conv2D(10, 5, activation='relu'),
-#   MaxPool2D(),
-#   Conv2D(10, 5, activation='relu'),
-#   Conv2D(10, 5, activation='relu'),
   Flatten(),
   Dense(512, activation='relu'),
   Dense(128, activation='relu'),
@@ -114,15 +109,6 @@ def pred_and_plot(model, img, class_names):
 async def predictCNN(file: UploadFile = File(...)):
     img=await file.read()
     print(file.content_type)
-    # l=['Ajanta Caves', 'Amr ibn al-Aas Mosque', 'Basilica of Bom Jesus',
-    #    'Burj Khalifa', 'Charar-e-Sharief', 'Charminar', 'Chichen Itza',
-    #    'Chota Imambara', 'Christ the Redeemer', 'Eiffel Tower',
-    #    'Ellora Caves', 'Gateway of India', 'Golden Temple',
-    #    'Great Wall of China', 'Hawa Mahal', 'Humayuns Tomb', 'India Gate',
-    #    'Khajuraho', 'Machu Pichu', 'Mysore Palace', 'Pyramid of Giza',
-    #    'Qutub Minar', 'Roman Colosseum', 'Statue of Liberty',
-    #    'Sun Temple Konark', 'Taj Mahal', 'Tanjavur Temple',
-    #    'Victoria Memorial']
     l=['Amr ibn al-Aas Mosque', 'Burj Khalifa', 'Charar-e-Sharief',
        'Charminar', 'Christ the Redeemer', 'Eiffel Tower',
        'Gateway of India', 'Golden Temple', 'Great Wall of China',
